@@ -4,8 +4,6 @@ import { GlobalContext } from "../context/GlobalState";
 function Balance() {
   const { transactions } = useContext(GlobalContext);
 
-  console.log(transactions);
-
   const amounts = transactions.map((t) => Number(t.amount) || 0);
   const balance = amounts.reduce((acc, cur) => {
     return acc + cur;

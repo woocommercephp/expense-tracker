@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { Button } from "@material-ui/core";
 
 function AddTransaction() {
   const [text, setText] = useState("");
@@ -30,8 +31,11 @@ function AddTransaction() {
             placeholder="Enter amount..."
           />
         </div>
-        <button
+        <Button
+          style={{ marginTop: 20 }}
           className="btn"
+          variant="contained"
+          color="primary"
           onClick={(e) => {
             e.preventDefault();
             addTransaction({
@@ -42,7 +46,7 @@ function AddTransaction() {
           }}
         >
           Add transaction
-        </button>
+        </Button>
       </form>
     </>
   );
